@@ -1,0 +1,1 @@
+SpringBoot集成kafka教程： https://blog.csdn.net/csdnerM/article/details/121856703
