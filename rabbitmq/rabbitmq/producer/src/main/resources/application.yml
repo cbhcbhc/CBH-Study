@@ -1,0 +1,11 @@
+server:
+  port: 8081
+  # rabbitmq配置
+spring:
+  application:
+    name: rabbitmq-producer
+  rabbitmq:
+    addresses: 139.159.161.154
+    username: guest
+    password: guest
+    virtual-host: test
