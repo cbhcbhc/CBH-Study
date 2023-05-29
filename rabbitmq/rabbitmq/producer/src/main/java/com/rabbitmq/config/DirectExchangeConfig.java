@@ -40,12 +40,18 @@ public class DirectExchangeConfig {
     // 将队列和交换机绑定
     @Bean
     public Binding bindingDirectExchange(Queue directQueue, DirectExchange directExchange) {
-        return BindingBuilder.bind(directQueue).to(directExchange).with(DIRECT_ROUTING_KEY);
+        return BindingBuilder
+                .bind(directQueue)
+                .to(directExchange)
+                .with(DIRECT_ROUTING_KEY);
     }
  
     @Bean
     public Binding bindingDirectExchange2(Queue directQueue2, DirectExchange directExchange) {
-        return BindingBuilder.bind(directQueue2).to(directExchange).with(DIRECT_ROUTING_KEY2);
+        return BindingBuilder
+                .bind(directQueue2)
+                .to(directExchange)
+                .with(DIRECT_ROUTING_KEY2);
     }
  
 }
