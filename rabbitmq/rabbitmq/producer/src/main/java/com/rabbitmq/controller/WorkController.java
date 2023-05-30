@@ -10,15 +10,17 @@ import javax.annotation.Resource;
 
 @RestController
 @Slf4j
-@RequestMapping("/direct")
-public class DirectController {
+@RequestMapping("/work")
+public class WorkController {
     @Resource
     private RabbitTemplate rabbitTemplate;
 
     @GetMapping("/send")
     public String sendMessage(){
-        //这里对应着DirectExchangeConfig中的配置，直连时候只有交换机和routerkey都一样才可以
-        rabbitTemplate.convertAndSend("directExchange","direct2","hello2");
+        for (int i = 0; i < 20; i++) {
+            rabbitTemplate.convertAndSend("WorkQueues","work message"+ i);
+
+        }
         return "消息发送成功";
     }
 }
